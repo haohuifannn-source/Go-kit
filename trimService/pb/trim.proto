@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "trimservice/pb";
+
+service Trim{
+    rpc Trim(TrimRequest) returns (TrimResponse){}
+    rpc Trim2(TrimRequest2) returns (TrimResponse2){}
+}
+
+message TrimRequest{
+    string str = 1;
+}
+
+message TrimResponse{
+    string str = 1;
+}
+
+message TrimRequest2{
+    repeated string str = 1;
+}
+
+message TrimResponse2{
+    repeated string str = 1;
+}
